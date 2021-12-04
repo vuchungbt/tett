@@ -1,0 +1,95 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description', content='')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  meta(name='author', content='')
+  title Admin
+  link(href='/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+  link(href='/css/simple-sidebar.css', rel='stylesheet')
+  link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" )
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src="https://code.jquery.com/jquery-3.5.1.js")
+  script(type='text/javascript' charset='utf8' src='https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js')
+  //script(src='socket.io/socket.io.js')
+  script(src='/vendor/jquery/jquery.min.js')
+  script(src='/vendor/bootstrap/js/bootstrap.bundle.min.js')
+  script(src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js")
+  link(rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css')
+  link(rel='stylesheet', href='/css/mess.css')
+  
+  
+
+body
+  #wrapper.d-flex
+    // Sidebar
+    #sidebar-wrapper.bg-light.border-right
+      .sidebar-heading(style="color :red") Strangerfunny
+      .list-group.list-group-flush
+        a.list-group-item.list-group-item-action.bg-light(href='/admin') Home
+        a.list-group-item.list-group-item-action.bg-light(href='/admin/user') User
+         a.list-group-item.list-group-item-action.bg-light(href='/admin/room/1') Room
+        a.list-group-item.list-group-item-action.bg-light(href='/admin/feedback') Feedback
+        a.list-group-item.list-group-item-action.bg-light(href='/admin/link') Link  
+        a.list-group-item.list-group-item-action.bg-light(href='/admin/help') Help
+    // /#sidebar-wrapper
+    // Page Content
+    #page-content-wrapper
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light.border-bottom
+        button#menu-toggle.btn.btn-primary Toggle Menu
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto.mt-2.mt-lg-0
+            li.nav-item.active
+              a.nav-link(href='/admin/auth/logout')
+                button.btn.btn-secondary(type='button') Logout
+               
+                span.sr-only (current)
+      block content
+        link(rel='stylesheet', href='/css/intro.css')
+        .head
+          img.imge(src='/img/200_logo.png')
+          .right
+            .text-head strangerfunny.com
+            .text-head Chat with strangers
+        .container
+          .row
+            .col.cl1
+              div Download for Android
+              div
+                a(href='') Google Play
+            .col.cl2
+              div Connect with us on facebook confession
+              div
+                img(src='', alt='')
+                a(href='') link facebook
+            .w-100
+            .col.cl3
+              div Download for IOS
+              div
+                a(href='') Apple Store
+            .col.cl4
+              div Find stranger with commuity
+              div
+                img(src='', alt='')
+                a(href='') Link groups
+        footer.page-footer.font-small.blue
+          .footer-copyright.text-center.py-3
+            strong.text Keydateam @ coppy right 2020
+            p
+              strong.text  product.strangerfunny@gmail.com
+
+  // /#page-content-wrapper
+// /#wrapper
+// Bootstrap core JavaScript
+// Menu Toggle Script
+
+
+script.
+    $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+    });
+ 

@@ -1,0 +1,39 @@
+extends ../template
+block content
+    link(rel='stylesheet', href='/css/profile.css')
+    .container
+        if user
+            p
+                | UserID: 
+                span=user._id
+            p
+                | Username: 
+                span=user.username
+            p
+                | First name: 
+                span=user.firstname
+            p
+                | Last name: 
+                span=user.lastname
+            p
+                | Email: 
+                span=user.email
+            p
+                | Heart: 
+                span=user.heart
+            p   
+                | Report: 
+                span=user.report
+            p
+                | Trading: 
+                span=user.trading
+            p
+                | Time block: 
+                span=`${user.timeBlock.getMonth() +1}/${user.timeBlock.getDate()}/${user.timeBlock.getFullYear()},${user.timeBlock.getHours()}:${user.timeBlock.getMinutes()}`
+            .btn
+                a#del.btn.btn-danger.mr-2(href='/admin/user/delete/' + user._id) Delete User
+                a.btn.btn-warning.ml-2.mr-3(href='/admin/user/block/'+user._id) Ban 1 hour
+                a.btn.btn-primary.ml-2.mr-2(href='/admin/user/unblock/'+user._id) UnBan
+                a.btn.btn-info.ml-2(href='/admin/user') Cancel
+    script.
+       
